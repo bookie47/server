@@ -1,9 +1,16 @@
 import express from "express";
 import { WebSocketServer } from "ws";
 import fetch from "node-fetch";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
+
+// ✅ route สำหรับทดสอบว่าเซิร์ฟเวอร์ออนไลน์
+app.get("/", (req, res) => {
+  res.send("✅ ESP32 Proxy is running successfully!");
+});
 
 // รับข้อมูลจาก ESP32 แล้วส่งต่อไปยัง Dashboard
 app.post("/api/update", async (req, res) => {
