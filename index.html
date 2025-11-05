@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRAB BOT - Control Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-left">
+          <h1>🤖 GRAB BOT</h1>
+          <p>Robotic Arm Control Panel</p>
+        </div>
+        <div class="header-right">
+          <div class="status-badge">LIVE</div>
+          <div class="info-chips">
+            <span>Uptime: <strong id="uptime">99.8%</strong></span>
+            <span>Last Status: <strong id="heartbeat">1s ago</strong></span>
+            <span>Firmware: <strong id="firmware">v1.2.3</strong></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <section id="servo-controls" class="card servo-controls">
+          <h2>Servo Control Panel</h2>
+          <div class="servo-grid">
+            <!-- Servo items will be injected by JS -->
+          </div>
+        </section>
+
+        <section id="watchdog-monitor" class="card watchdog-monitor">
+          <div class="watchdog-timer">
+            <div class="timer-display">
+              <span class="timer-value" id="watchdog-value">--</span>
+              <h3 class="timer-heading">Watchdog</h3>
+              <span class="timer-unit">status</span>
+            </div>
+            <div class="timer-progress">
+              <div class="timer-progress-track">
+                <div class="timer-progress-fill" id="watchdog-progress"></div>
+              </div>
+              <div class="timer-markers">
+                <span>60</span>
+                <span>45</span>
+                <span>30</span>
+                <span>15</span>
+                <span>0</span>
+              </div>
+            </div>
+            <div class="timer-footer">
+              <div class="timer-status is-unknown">
+                <span class="status-dot"></span>
+                <span id="watchdog-status">Awaiting sleep status</span>
+              </div>
+              <span class="timer-reset">Shows moon icon while sleeping</span>
+            </div>
+          </div>
+        </section>
+        <section id="status-leds" class="card status-leds">
+          <h2>Status</h2>
+          <div class="led-group">
+            <div class="led-item">
+              <div class="led green"></div>
+              <span>Yellow LED: <strong id="led-y">OFF</strong></span>
+            </div>
+            <div class="led-item">
+              <div class="led blue"></div>
+              <span>Blue LED: <strong id="led-b">OFF</strong></span>
+            </div>
+            <div class="led-item">
+              <div class="led orange"></div>
+              <span>Red LED: <strong id="led-r">OFF</strong></span>
+            </div>
+          </div>
+        </section>
+
+        <section id="logs-panel" class="card logs-panel">
+          <h2>Event Logs</h2>
+          <ul class="logs-list">
+            <!-- Log items will be injected by JS -->
+          </ul>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
